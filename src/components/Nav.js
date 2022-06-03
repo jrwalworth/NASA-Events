@@ -2,7 +2,9 @@ import React from 'react'
 
 const Nav = () => {
     return (
-        <div>Nav</div>
+        <div className="nav">
+            <h2>Nasa Event Search</h2>
+        </div>
     )
 }
 

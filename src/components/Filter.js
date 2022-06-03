@@ -21,14 +21,18 @@ const Filter = () => {
 
     console.log('eventsdata', eventsData);
     return (
-        <div>
-            {eventsData?.map((event, index) => (
-                <div key={index}>
-                    <p>{event.id}</p>
-                    <p>{event.title}</p>
+        <div className="filters">
+            <div >
+                Filter One
+            </div>
+            <div>
+                Filter Two
+            </div>
+            <div>
+                List View
+            </div>
 
-                </div>
-            ))}
+            
         </div>
     );
 };
