@@ -102,7 +102,8 @@ const Filter = () => {
                     {waterCount > 0 ? <li><span>Water Color:</span><span>{waterCount}</span></li> : null}
                     {manCount > 0 ? <li><span>Manmade:</span><span>{manCount}</span></li> : null}
                     <hr/>
-                    <li><span>Total Events:</span><span>{eventsData.length}</span></li>
+                    {eventsData.length ? <li><span>Total Events Reported:</span><span>{eventsData.length}</span></li> : null }
+                    
                 </ul>
                 
             </div>
