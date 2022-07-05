@@ -7,10 +7,15 @@ import '../App.css';
 import NASA_API_KEY from './.env';
 
 
-// const fireIcon = new Icon({
-//     iconUrl: "",
-//     iconSize: [20, 20]
-// })
+const fireIcon = new Icon({
+    iconUrl: "",
+    iconSize: [20, 20]
+})
+
+const earthQuakeIcon = new Icon({
+
+})
+
 
 
 const View = () => {
@@ -27,6 +32,24 @@ const View = () => {
         .catch(err => console.log(err));
     }, []);
 
+    let findAllCategories = () => {
+        let allCatArr = [];
+        for (let i=0; i < eventsData.length; i++){
+            for (let j =0; j < eventsData[i].categories.length; j++) {
+                allCatArr.push(eventsData[i].categories[j].title);
+            }
+            
+        }
+        return allCatArr;
+    }
+    console.log(findAllCategories());
+
+    
+    let fireCount = () => {
+        console.log('fire count e.data', eventsData);
+    }
+
+    // console.log('fire count e.data', eventsData[0].categories[0].title);
     // console.log('eventsdata', eventsData);
     return (
         <div id="map">
@@ -50,12 +73,18 @@ const View = () => {
                             onClose= {() => {
                                 setActiveMarker(null);
                             }}>
-                                <div className="popup"></div>
-                                <h3>{_event.id}</h3>
-                                <p>{_event.title}</p>
-                                <p>Category:{_event.categories[0].title}</p>
-                                <p>{_event.geometries[0].date}</p>
-                                <p>Lat:{_event.geometries[0].coordinates[1]} | Lon:{_event.geometries[0].coordinates[0]}</p>
+                                <div className="popup">
+                                    <h2>{_event.title}</h2>
+                                    <p>Category:{_event.categories[0].title}</p>
+                                    <p>{_event.geometries[0].date}</p>
+                                    <p>Lat:{_event.geometries[0].coordinates[1]} | Lon:{_event.geometries[0].coordinates[0]}</p>
+                                    <hr/>
+                                    <div className="popup-actions">
+                                        <p>{_event.id}</p>
+                                        <button>Links</button>
+                                    </div>
+                                    
+                                </div>
                             </Popup>
                             
                     </Marker>
