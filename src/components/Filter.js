@@ -20,17 +20,29 @@ const Filter = () => {
     }, []);
 
     console.log('eventsdata', eventsData);
+    // console.log('events......', eventsData.categories.title);
+
+    // eventsData.filter(eventsData.)
+
+    //count wildfires
+    
     return (
         <div className="filters">
+            <h4 className="filter-header">Details</h4>
             <div >
-                Filter One
+                <ul className="filter-items">
+                    <li>test</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                
             </div>
-            <div>
-                Filter Two
-            </div>
-            <div>
-                List View
-            </div>
+            
+            
 
             
         </div>

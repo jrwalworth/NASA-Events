@@ -7,10 +7,10 @@ import '../App.css';
 import NASA_API_KEY from './.env';
 
 
-const fireIcon = new Icon({
-    iconUrl: "",
-    iconSize: [20, 20]
-})
+// const fireIcon = new Icon({
+//     iconUrl: "",
+//     iconSize: [20, 20]
+// })
 
 
 const View = () => {
@@ -29,8 +29,7 @@ const View = () => {
 
     // console.log('eventsdata', eventsData);
     return (
-        <div>
-            <div>---</div>
+        <div id="map">
             <Map center = {[32.715736, -117.161087]} zoom = {5}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -44,14 +43,19 @@ const View = () => {
                         ]}
                         onClick = {() => {
                             setActiveMarker(_event);
-                        }}>
-                            <Popup>
+                        }}
+
+                        >
+                            <Popup
+                            onClose= {() => {
+                                setActiveMarker(null);
+                            }}>
                                 <div className="popup"></div>
                                 <h3>{_event.id}</h3>
                                 <p>{_event.title}</p>
                                 <p>Category:{_event.categories[0].title}</p>
                                 <p>{_event.geometries[0].date}</p>
-                                <p>Lat:{_event.geometries[0].coordinates[1]} Lon:{_event.geometries[0].coordinates[0]}</p>
+                                <p>Lat:{_event.geometries[0].coordinates[1]} | Lon:{_event.geometries[0].coordinates[0]}</p>
                             </Popup>
                             
                     </Marker>
