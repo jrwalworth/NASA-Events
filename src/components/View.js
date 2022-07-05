@@ -81,9 +81,8 @@ const View = () => {
                             _event.categories[0].title == 'Volcanoes' ? volcanoIcon :
                             _event.categories[0].title == 'Severe Storms' ? stormIcon :
                             _event.categories[0].title == 'Sea and Lake Ice' ? meltIcon :
+                            //TODO - add condition for all event category types
                             earthQuakeIcon}
-
-
                         >
                             <Popup
                             onClose= {() => {
@@ -92,13 +91,16 @@ const View = () => {
                                 <div className="popup">
                                     <h2>{_event.title}</h2>
                                     <p>Category:{_event.categories[0].title}</p>
-                                    {/* <p>Description: {_event.sources[0]}</p> */}
                                     <p>Latest Update:<Moment format="MMM. DD, YYYY" date={_event.geometries[0].date}/></p>
                                     <p>Lat:{_event.geometries[0].coordinates[1]} | Lon:{_event.geometries[0].coordinates[0]}</p>
                                     <hr/>
                                     <div className="popup-actions">
                                         <p>{_event.id}</p>
                                         <button>Links</button>
+                                    </div>
+                                    <div className="sources">
+                                        <h5>Sources:</h5>
+                                        {_event.sources? _event.sources.map((source)=> <p>{source.id}<br/>{source.url}</p>) : null}
                                     </div>
                                     
                                 </div>

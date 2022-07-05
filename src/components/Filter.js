@@ -16,7 +16,7 @@ const Filter = () => {
             setEventsData(response.data.events);
         })
         .catch(err => console.log(err));
-    }, [eventsData]);
+    }, []);
 
     console.log('eventsdata', eventsData);
     // console.log('events......', eventsData.categories.title);
