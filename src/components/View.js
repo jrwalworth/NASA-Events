@@ -21,6 +21,8 @@ const earthQuakeIcon = new Icon({
 const View = () => {
     const [eventsData, setEventsData] = useState([]);
     const [activeMarker, setActiveMarker] = useState(null);
+    // const [categories, setCategories] = useState([]);
+    const [count, setCount] = useState(0);
 
     useEffect(() => {
         axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${NASA_API_KEY}`)
@@ -32,22 +34,7 @@ const View = () => {
         .catch(err => console.log(err));
     }, []);
 
-    let findAllCategories = () => {
-        let allCatArr = [];
-        for (let i=0; i < eventsData.length; i++){
-            for (let j =0; j < eventsData[i].categories.length; j++) {
-                allCatArr.push(eventsData[i].categories[j].title);
-            }
-            
-        }
-        return allCatArr;
-    }
-    console.log(findAllCategories());
-
     
-    let fireCount = () => {
-        console.log('fire count e.data', eventsData);
-    }
 
     // console.log('fire count e.data', eventsData[0].categories[0].title);
     // console.log('eventsdata', eventsData);
