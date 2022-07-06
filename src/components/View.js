@@ -89,7 +89,16 @@ const View = () => {
                                 setActiveMarker(null);
                             }}>
                                 <div className="popup">
-                                    <h2>{_event.title}</h2>
+                                    <div className="p-head">
+                                        {_event.categories[0].title == 'Wildfires'? <img src={fire} /> : 
+                                            _event.categories[0].title == 'Volcanoes' ?  <img src={volcano} /> :
+                                            _event.categories[0].title == 'Severe Storms' ? <img src={storm} /> :
+                                            _event.categories[0].title == 'Sea and Lake Ice' ? <img src={melt} /> :
+                                            <img src={quake} />
+                                        }
+                                        <h2>{_event.title}</h2>
+                                    </div>
+                                    
                                     <p>Category:{_event.categories[0].title}</p>
                                     <p>Latest Update:<Moment format="MMM. DD, YYYY" date={_event.geometries[0].date}/></p>
                                     <p>Lat:{_event.geometries[0].coordinates[1]} | Lon:{_event.geometries[0].coordinates[0]}</p>

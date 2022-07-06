@@ -78,11 +78,21 @@
 }
 
 
-
 .popup-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.p-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-head img {
+  width: 50px;
+  height: 50px;
 }
 
 .sources {
