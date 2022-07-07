@@ -1,0 +1,25 @@
+{
+  "name": "nasa-events",
+  "version": "1.0.0",
+  "description": "### Tech: - React.js - Axios - NASA open API - Maps API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": "16.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrwalworth/NASA-Events.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrwalworth/NASA-Events/issues"
+  },
+  "homepage": "https://github.com/jrwalworth/NASA-Events#readme"
+}
