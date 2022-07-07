@@ -77,10 +77,10 @@ const View = () => {
                         onClick = {() => {
                             setActiveMarker(_event);
                         }}
-                        icon= {_event.categories[0].title == 'Wildfires'? fireIcon :
-                            _event.categories[0].title == 'Volcanoes' ? volcanoIcon :
-                            _event.categories[0].title == 'Severe Storms' ? stormIcon :
-                            _event.categories[0].title == 'Sea and Lake Ice' ? meltIcon :
+                        icon= {_event.categories[0].title === 'Wildfires'? fireIcon :
+                            _event.categories[0].title === 'Volcanoes' ? volcanoIcon :
+                            _event.categories[0].title === 'Severe Storms' ? stormIcon :
+                            _event.categories[0].title === 'Sea and Lake Ice' ? meltIcon :
                             //TODO - add condition for all event category types
                             earthQuakeIcon}
                         >
@@ -90,10 +90,10 @@ const View = () => {
                             }}>
                                 <div className="popup">
                                     <div className="p-head">
-                                        {_event.categories[0].title == 'Wildfires'? <img src={fire} /> : 
-                                            _event.categories[0].title == 'Volcanoes' ?  <img src={volcano} /> :
-                                            _event.categories[0].title == 'Severe Storms' ? <img src={storm} /> :
-                                            _event.categories[0].title == 'Sea and Lake Ice' ? <img src={melt} /> :
+                                        {_event.categories[0].title === 'Wildfires'? <img src={fire} /> : 
+                                            _event.categories[0].title === 'Volcanoes' ?  <img src={volcano} /> :
+                                            _event.categories[0].title === 'Severe Storms' ? <img src={storm} /> :
+                                            _event.categories[0].title === 'Sea and Lake Ice' ? <img src={melt} /> :
                                             <img src={quake} />
                                         }
                                         <h2>{_event.title}</h2>
