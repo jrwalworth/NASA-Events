@@ -5,8 +5,8 @@ import { Icon } from 'leaflet';
 import axios from 'axios';
 import Moment from 'react-moment';
 import '../App.css';
-import NASA_API_KEY from './.env';
-
+import REACT_APP_NASA_API_KEY from './.env';
+// NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
 //create custom marker icons
 import fire from '../assets/fire-48.png';
@@ -40,15 +40,14 @@ const meltIcon = new Icon({
 
 
 
-
 const View = () => {
     const [eventsData, setEventsData] = useState([]);
     const [activeMarker, setActiveMarker] = useState(null);
     // const [categories, setCategories] = useState([]);
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
     useEffect(() => {
-        axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${NASA_API_KEY}`)
+        axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${REACT_APP_NASA_API_KEY}`)
         .then(response=> {
             // console.log('status', response.status);
             // console.log('response.data.events:',response.data.events);

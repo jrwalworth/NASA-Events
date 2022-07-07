@@ -2,13 +2,15 @@ import axios from 'axios';
 import React, { useState, useEffect }from 'react';
 import '../App.css';
 // import * as data from './responseNASA.json';
-import NASA_API_KEY from './.env';
+import REACT_APP_NASA_API_KEY from './.env';
+import env from "react-dotenv";
+// NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
 const Filter = () => {
     const [eventsData, setEventsData] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${NASA_API_KEY}`)
+        axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${REACT_APP_NASA_API_KEY}`)
         .then(response=> {
             // console.log('status', response.status);
             // console.log('response.data.events:',response.data.events);
