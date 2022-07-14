@@ -43,6 +43,7 @@ const meltIcon = new Icon({
 
 const View = () => {
     const [eventsData, setEventsData] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [activeMarker, setActiveMarker] = useState(null);
     // const [categories, setCategories] = useState([]);
     // const [count, setCount] = useState(0);
@@ -52,7 +53,9 @@ const View = () => {
         .then(response=> {
             // console.log('status', response.status);
             // console.log('response.data.events:',response.data.events);
+            setLoading(true);
             setEventsData(response.data.events);
+            setLoading(false);
         })
         .catch(err => console.log(err));
     }, []);
@@ -82,7 +85,9 @@ const View = () => {
     // console.log('fire count e.data', eventsData[0].categories[0].title);
     // console.log('eventsdata', eventsData);
     return (
+        
         <div id="map">
+            { !loading ? 
             <Map center = {[32.715736, -117.161087]} zoom = {4}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -138,7 +143,9 @@ const View = () => {
                     </Marker>
                 ))}
             </Map>
+            : <h1>loading...</h1> }
         </div>
+        
     );
 };
 
