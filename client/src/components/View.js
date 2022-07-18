@@ -141,7 +141,7 @@ const View = () => {
                             </Popup>
                             
                     </Marker>
-                ))}
+                ))}git sat
             </Map>
             : <h1>loading...</h1> }
         </div>
