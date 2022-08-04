@@ -76,11 +76,10 @@ const View = () => {
 
         //navigate browser to news.google and run search
         let gNewsSearchString = prefix + searchString;
-        console.log("Seaching...", gNewsSearchString);
+        console.log("Searching...", gNewsSearchString);
 
     }
 
-    
 
     // console.log('fire count e.data', eventsData[0].categories[0].title);
     // console.log('eventsdata', eventsData);
