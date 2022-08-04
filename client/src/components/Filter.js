@@ -8,6 +8,7 @@ import env from "react-dotenv";
 
 const Filter = () => {
     const [eventsData, setEventsData] = useState([]);
+    const [latestEvents, setLatestEvents] = useState([]);
 
     useEffect(() => {
         axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${REACT_APP_NASA_API_KEY}`)
@@ -38,6 +39,22 @@ const Filter = () => {
         return allCatArr;
     }
     console.log(findAllCategories());
+
+    // let findLatest = () => {
+    //     let latestEventArray = [];
+    //     for (let n=0; n < eventsData.length; n++){
+    //         // console.log('eventItemDate', eventsData[n].geometries[0].date);
+    //         if (eventsData[n].geometries[0].date > '2022-05-01'){
+    //             // console.log('ThisYearDate', eventsData[n].geometries[0].date)
+    //             latestEventArray.push(eventsData[n]);
+                
+    //         }
+    //     }
+    //     console.log('latestArray',latestEvents);
+    //     setLatestEvents(latestEventArray);
+    //     return latestEvents
+    // }
+    // findLatest();
 
     
     let catCount = (strCat) => {
