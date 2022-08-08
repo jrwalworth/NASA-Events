@@ -73,14 +73,15 @@ const View = () => {
         let searchString = inputString.replace(/ /g, '%20') + '%20&hl=en-US&gl=US&ceid=US%3Aen';
         console.log('searchString:',searchString);
         //TODO - search news articles for this event title.
+        window.open('https://news.google.com/search?q='+searchString);
         //news.google.com/search?...
         //samples
         //https://news.google.com/search?q=Wildfire%20-%20Rio%20Blanco%20County%20(Oil%20Spring%20Fire)%2C%20Colorado%2C%20United%20States&hl=en-US&gl=US&ceid=US%3Aen
         //https://news.google.com/search?q=kinsley%20fire&hl=en-US&gl=US&ceid=US%3Aen
 
         //navigate browser to news.google and run search
-        let gNewsSearchString = prefix + searchString;
-        console.log("Searching...", gNewsSearchString);
+        // let gNewsSearchString = prefix + searchString;
+        // console.log("Searching...", gNewsSearchString);
 
     }
 
@@ -133,7 +134,7 @@ const View = () => {
                                     <hr/>
                                     <div className="popup-actions">
                                         <p>{_event.id}</p>
-                                        <button value={_event.title} className='btn' onClick={handleNews}>News</button>
+                                        <button value={_event.title} className='btn news' onClick={handleNews}>News</button>
                                     </div>
                                     <div className="sources">
                                         <h5>Sources:</h5>
@@ -144,7 +145,7 @@ const View = () => {
                             </Popup>
                             
                     </Marker>
-                ))}git sat
+                ))}
             </Map>
             : <h1>loading...</h1> }
         </div>
