@@ -70,10 +70,10 @@ const View = () => {
         let prefix = 'https://news.google.com/search?=';
         let inputString = e.target.value;
         //replace all spaces with %20
-        let searchString = inputString.replace(/ /g, '%20') + '%20&hl=en-US&gl=US&ceid=US%3Aen';
-        console.log('searchString:',searchString);
+        // let searchString = inputString.replace(/ /g, '%20') + '%20&hl=en-US&gl=US&ceid=US%3Aen';
+        // console.log('searchString:',searchString);
         //TODO - search news articles for this event title.
-        window.open('https://news.google.com/search?q='+searchString);
+        window.open('https://news.google.com/search?q='+ inputString);
         //news.google.com/search?...
         //samples
         //https://news.google.com/search?q=Wildfire%20-%20Rio%20Blanco%20County%20(Oil%20Spring%20Fire)%2C%20Colorado%2C%20United%20States&hl=en-US&gl=US&ceid=US%3Aen
