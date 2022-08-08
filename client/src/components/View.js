@@ -39,6 +39,10 @@ const meltIcon = new Icon({
     iconSize: [40, 40]
 });
 
+const backdate = new Date();
+backdate.setDate(backdate.getDate() - 30)
+console.log('date', backdate);
+
 
 
 const View = () => {
@@ -92,7 +96,7 @@ const View = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='© OpenStreetMap'
                 />
-                {eventsData?.map(_event => (
+                {eventsData?.filter(_event => _event.geometries[0].date > '2022-07-09').map(_event => (
                     <Marker key={_event.id} position={
                         [
                             _event.geometries[0].coordinates[1], 
