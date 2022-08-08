@@ -63,10 +63,13 @@ const Filter = () => {
         for (let i = 0; i < eventsData.length; i++){
             // console.log(eventsData[i].categories.length);
             // console.log('event cat title:', eventsData[i].categories[0].title);
-            if (eventsData[i].categories[0].title == strCat){
-                // console.log('add to count')
-                catCounter++;
-                } 
+            if (eventsData[i].geometries[0].date > '2022-07-09') {
+                if (eventsData[i].categories[0].title == strCat){
+                    // console.log('add to count')
+                    catCounter++;
+                    } 
+            }
+            
         };
         return catCounter;
     }
@@ -121,8 +124,8 @@ const Filter = () => {
                     {waterCount > 0 ? <li><span>Water Color:</span><span>{waterCount}</span></li> : null}
                     {manCount > 0 ? <li><span>Manmade:</span><span>{manCount}</span></li> : null}
                     <hr/>
-                    {eventsData.length ? <li><span>Total Events Reported:</span><span>{eventsData.length}</span></li> : null }
-                    
+                    {/* {eventsData.length ? <li><span>Total Events Reported:</span><span>{eventsData.length}</span></li> : null } */}
+                    <h5>*All events listed are reported within the last 30 days</h5>
                 </ul>
                 
             </div>
