@@ -54,10 +54,11 @@ const View = () => {
 
     useEffect(() => {
         axios.get(`https://eonet.gsfc.nasa.gov/api/v2.1/events?api_key=${REACT_APP_NASA_API_KEY}`)
+        .then(setLoading(true))
         .then(response=> {
             // console.log('status', response.status);
             // console.log('response.data.events:',response.data.events);
-            setLoading(true);
+            // setLoading(true);
             setEventsData(response.data.events);
             setLoading(false);
         })
@@ -147,7 +148,7 @@ const View = () => {
                     </Marker>
                 ))}
             </Map>
-            : <h1>loading...</h1> }
+            : <h1>Loading Events...</h1> }
         </div>
         
     );
