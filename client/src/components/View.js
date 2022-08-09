@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {MapContainer as Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Link } from 'react-router-dom';
 import { Icon } from 'leaflet';
+import Loader from '../components/Loader';
 // import { useMap } from 'react-leaflet/hooks';
 import axios from 'axios';
 import Moment from 'react-moment';
@@ -148,7 +149,7 @@ const View = () => {
                     </Marker>
                 ))}
             </Map>
-            : <h1>Loading Events...</h1> }
+            : <Loader /> }
         </div>
         
     );
